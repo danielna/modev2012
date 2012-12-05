@@ -17,10 +17,10 @@
     </head>
     <body>
         <header class="bar-title">
-            <a class="button-prev" href="../" data-transition="slide-in">
+            <a class="button-prev" href="../" data-ignore="push">
                 Previous
             </a>
-            <h1 class="title">Review Details</h1>
+            <h1 class="title">Reviews</h1>
         </header>
         <div class="content">
             <div class="content-padded">
@@ -76,8 +76,6 @@
                     url: "<?=$_POST['url']?>"
                 };
 
-                $("h1.title").text(obj_details.title);
-
                 for (var det in obj_details)
                 {        
                     var temp = obj_details[det];
@@ -93,11 +91,6 @@
 
                 var rottentomatoes = new usatoday.rottentomatoes();
                 rottentomatoes.getData(obj_details.title);
-
-                $("a.button-prev").on("click", function() {
-                    alert("hey!");
-                    setTimeout(2000, usatoday.globals.init_home());
-                });
         });
         </script>
     </body>

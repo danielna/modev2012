@@ -76,7 +76,7 @@ usatoday.usatodayfeed = function() {
                         url: this.WebUrl
                     };
                     movies.push(
-                        "<li><a href='movies/' data-transition='slide-in' data-title='" + data.title.replace(/'/g, '') + 
+                        "<li><a href='movies/' data-ignore='push' data-title='" + data.title.replace(/'/g, '') + 
                         "' data-actors='" + data.actors.replace(/'/g, '') + 
                         "' data-mpaa='" + data.mpaa +
                         "' data-score='" + data.score +

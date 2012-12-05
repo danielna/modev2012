@@ -11,6 +11,9 @@ usatoday.globals = {
             rdio: "ncjpuc353zyz95vhhv7d5m5y"
         },
     init_home: function() {
+
+        console.log("init");
+
         var usaTodayFeed = new usatoday.usatodayfeed();
         usaTodayFeed.getMovies();
         usaTodayFeed.getMusic();
