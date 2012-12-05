@@ -2,8 +2,6 @@ $(document).ready(function() {
     
     var init = function() {
         var usaTodayFeed = new usatoday.usatodayfeed();
-        // usaTodayFeed.getNews();
-        // usaTodayFeed.getBooks();
         usaTodayFeed.getMovies();
         usaTodayFeed.getMusic();
 
