@@ -11,9 +11,9 @@
 
         <title>modev USA TODAY mashup</title>
         
-        <link rel="stylesheet" type="text/css" href="css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="css/home.css">
-        <link rel="stylesheet" type="text/css" href="css/ratchet.css">
+        <link rel="stylesheet" type="text/css" href="/modev/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/modev/css/home.css">
+        <link rel="stylesheet" type="text/css" href="/modev/css/ratchet.css">
     </head>
     <body>
         <header class="bar-title">
@@ -21,7 +21,7 @@
         </header>
         <div class="content">
             <div class="content-padded">
-                <img src="css/img/welcome.jpg"/>
+                <img src="/modev/css/img/welcome.jpg"/>
             </div>
              <div class="moviereviews">
                 <h2>Recent Movies</h2>
@@ -35,69 +35,27 @@
                 <ul class="list">
                 </ul>
             </div>
-            <!-- JAVASCRIPT -->
+        </div>    
+
+        <!-- JAVASCRIPT -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>        
         <!-- jFeed: RSS parser -->
-        <script src="js/vendor/jfeed/jatom.js"></script>
-        <script src="js/vendor/jfeed/jfeed.js"></script>
-        <script src="js/vendor/jfeed/jfeeditem.js"></script>
-        <script src="js/vendor/jfeed/jrss.js"></script>
+        <script src="/modev/js/vendor/jfeed/jatom.js"></script>
+        <script src="/modev/js/vendor/jfeed/jfeed.js"></script>
+        <script src="/modev/js/vendor/jfeed/jfeeditem.js"></script>
+        <script src="/modev/js/vendor/jfeed/jrss.js"></script>
 
-        <script src="js/vendor/ratchet.js"></script>
+        <script src="/modev/js/vendor/ratchet/ratchet.js"></script>
 
-        <script src="js/usatoday.globals.js"></script>
+        <script src="/modev/js/usatoday.globals.js"></script>
         
-        <script src="js/usatoday.usatodayfeed.js"></script>
+        <script src="/modev/js/usatoday.usatodayfeed.js"></script>
         <script>
             $(document).ready(function() {
-        
-                usatoday.init = function() {
-                    var usaTodayFeed = new usatoday.usatodayfeed();
-                    usaTodayFeed.getMovies();
-                    usaTodayFeed.getMusic();
-
-                    $(".breakingnews ul.list li a").live("click", function(e) { 
-                        e.preventDefault();
-                        var data = $(this).data();
-                        for (var attr in data) {
-                            $("#breakingnewsForm").find("input[name=" + attr+ "]").val(data[attr]);
-                        }
-                    });
-
-                    $(".bookreviews ul.list li a").live("click", function(e) { 
-                        e.preventDefault();
-                        var data = $(this).data();
-                        for (var attr in data) {
-                            $("#bookreviewsForm").find("input[name=" + attr+ "]").val(data[attr]);
-                        }
-                        $("#bookreviewsForm").submit();
-                    });
-
-                    $(".moviereviews ul.list li a").live("click", function(e) { 
-                        e.preventDefault();
-                        var data = $(this).data();
-                        for (var attr in data) {
-                            $("#moviereviewsForm").find("input[name=" + attr+ "]").val(data[attr]);
-                        }
-                        $("#moviereviewsForm").submit();
-
-                    });
-
-                    $(".musicreviews ul.list li a").live("click", function(e) { 
-                        e.preventDefault();
-                        var data = $(this).data();
-                        for (var attr in data) {
-                            $("#musicreviewsForm").find("input[name=" + attr+ "]").val(data[attr]);
-                        }
-                        $("#musicreviewsForm").submit();
-                    });
-                };
-
-                usatoday.init();
-
-                window.addEventListener('push', usatoday.init());
+                usatoday.globals.init_home();
             });
+            
         </script>
-        </div>       
+
     </body>
 </html>

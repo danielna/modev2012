@@ -10,9 +10,9 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         
         <title>modev USA TODAY mashup :: movies</title>
-        <link rel="stylesheet" type="text/css" href="../css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="../css/ratchet.css">
-        <link rel="stylesheet" type="text/css" href="../css/movies.css">
+        <link rel="stylesheet" type="text/css" href="/modev/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/modev/css/ratchet.css">
+        <link rel="stylesheet" type="text/css" href="/modev/css/movies.css">
         <link href='http://fonts.googleapis.com/css?family=Lato:900' rel='stylesheet' type='text/css'>
     </head>
     <body>
@@ -41,7 +41,7 @@
                     <img class="poster_url" src=""/>
                     <div class="clearfix"></div>
                     <hr/>
-                    <img class="rt" src="../css/img/rotten.png"/>
+                    <img class="rt" src="/modev/css/img/rotten.png"/>
                     <div class="critics">
                         <h2 class="critics-header">What Critics Say</h2>
                         <div class="critics_consensus"></div>
@@ -62,9 +62,10 @@
 
         <!-- JAVASCRIPT -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>        
-        <script src="../js/vendor/ratchet/ratchet.js"></script>
-        <script src="../js/usatoday.globals.js"></script>
-        <script src="../js/usatoday.rottentomatoes.js"></script>
+        <script src="/modev/js/vendor/ratchet/ratchet.js"></script>
+        <script src="/modev/js/usatoday.globals.js"></script>
+        <script src="/modev/js/usatoday.rottentomatoes.js"></script>
+        <script src="/modev/js/usatoday.usatodayfeed.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
                 var obj_details = {
@@ -93,7 +94,10 @@
                 var rottentomatoes = new usatoday.rottentomatoes();
                 rottentomatoes.getData(obj_details.title);
 
-                // window.addEventListener('push', usatoday.init());
+                $("a.button-prev").on("click", function() {
+                    alert("hey!");
+                    setTimeout(2000, usatoday.globals.init_home());
+                });
         });
         </script>
     </body>
