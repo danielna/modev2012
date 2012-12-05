@@ -35,9 +35,7 @@
                 <ul class="list">
                 </ul>
             </div>
-        </div>
-
-        <!-- JAVASCRIPT -->
+            <!-- JAVASCRIPT -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>        
         <!-- jFeed: RSS parser -->
         <script src="js/vendor/jfeed/jatom.js"></script>
@@ -50,6 +48,56 @@
         <script src="js/usatoday.globals.js"></script>
         
         <script src="js/usatoday.usatodayfeed.js"></script>
-        <script src="js/usatoday.main.js"></script>
+        <script>
+            $(document).ready(function() {
+        
+                usatoday.init = function() {
+                    var usaTodayFeed = new usatoday.usatodayfeed();
+                    usaTodayFeed.getMovies();
+                    usaTodayFeed.getMusic();
+
+                    $(".breakingnews ul.list li a").live("click", function(e) { 
+                        e.preventDefault();
+                        var data = $(this).data();
+                        for (var attr in data) {
+                            $("#breakingnewsForm").find("input[name=" + attr+ "]").val(data[attr]);
+                        }
+                    });
+
+                    $(".bookreviews ul.list li a").live("click", function(e) { 
+                        e.preventDefault();
+                        var data = $(this).data();
+                        for (var attr in data) {
+                            $("#bookreviewsForm").find("input[name=" + attr+ "]").val(data[attr]);
+                        }
+                        $("#bookreviewsForm").submit();
+                    });
+
+                    $(".moviereviews ul.list li a").live("click", function(e) { 
+                        e.preventDefault();
+                        var data = $(this).data();
+                        for (var attr in data) {
+                            $("#moviereviewsForm").find("input[name=" + attr+ "]").val(data[attr]);
+                        }
+                        $("#moviereviewsForm").submit();
+
+                    });
+
+                    $(".musicreviews ul.list li a").live("click", function(e) { 
+                        e.preventDefault();
+                        var data = $(this).data();
+                        for (var attr in data) {
+                            $("#musicreviewsForm").find("input[name=" + attr+ "]").val(data[attr]);
+                        }
+                        $("#musicreviewsForm").submit();
+                    });
+                };
+
+                usatoday.init();
+
+                window.addEventListener('push', usatoday.init());
+            });
+        </script>
+        </div>       
     </body>
 </html>

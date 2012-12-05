@@ -17,7 +17,7 @@
     </head>
     <body>
         <header class="bar-title">
-            <a class="button-prev" href="../" data-ignore="push">
+            <a class="button-prev" href="../" data-transition="slide-in">
                 Previous
             </a>
             <h1 class="title">Review Details</h1>
@@ -66,33 +66,35 @@
         <script src="../js/usatoday.globals.js"></script>
         <script src="../js/usatoday.rottentomatoes.js"></script>
         <script type="text/javascript">
+            $(document).ready(function() {
+                var obj_details = {
+                    title: "<?=$_POST['title']?>",
+                    actors: "<?=$_POST['actors']?>",
+                    mpaa: "<?=$_POST['mpaa']?>",
+                    score: "<?=$_POST['score']?>",
+                    url: "<?=$_POST['url']?>"
+                };
 
-            var obj_details = {
-                title: "<?=$_POST['title']?>",
-                actors: "<?=$_POST['actors']?>",
-                mpaa: "<?=$_POST['mpaa']?>",
-                score: "<?=$_POST['score']?>",
-                url: "<?=$_POST['url']?>"
-            };
+                $("h1.title").text(obj_details.title);
 
-            $("h1.title").text(obj_details.title);
-
-            for (var det in obj_details)
-            {        
-                var temp = obj_details[det];
-                if (det === "url") {
-                    $(".usatoday .ut-url a").attr("href", temp);
-                    $(".usatoday .ut-url a").text("Read the USA TODAY review!");
-                } else if (det === "score") {
-                    $(".usatoday .stars").addClass("num-" + temp.replace('.', ''));
-                } else {
-                    $(".usatoday").find(".ut-" + det).append(obj_details[det]);
+                for (var det in obj_details)
+                {        
+                    var temp = obj_details[det];
+                    if (det === "url") {
+                        $(".usatoday .ut-url a").attr("href", temp);
+                        $(".usatoday .ut-url a").text("Read the USA TODAY review!");
+                    } else if (det === "score") {
+                        $(".usatoday .stars").addClass("num-" + temp.replace('.', ''));
+                    } else {
+                        $(".usatoday").find(".ut-" + det).append(obj_details[det]);
+                    }
                 }
-            }
 
-            var rottentomatoes = new usatoday.rottentomatoes();
-            rottentomatoes.getData(obj_details.title);
+                var rottentomatoes = new usatoday.rottentomatoes();
+                rottentomatoes.getData(obj_details.title);
 
+                // window.addEventListener('push', usatoday.init());
+        });
         </script>
     </body>
 </html>
