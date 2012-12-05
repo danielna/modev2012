@@ -1,0 +1,164 @@
+/* line 1, ../sass/movies.sass */
+.usatoday {
+  display: block;
+  position: relative;
+}
+/* line 4, ../sass/movies.sass */
+.usatoday .ut-title {
+  font-size: 40px;
+  font-family: "Lato";
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  border-bottom: 5px solid black;
+  margin-bottom: 5px;
+}
+/* line 12, ../sass/movies.sass */
+.usatoday .ut-mpaa {
+  margin-bottom: 5px;
+}
+/* line 15, ../sass/movies.sass */
+.usatoday .ut-score .break-line {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 20px;
+}
+/* line 20, ../sass/movies.sass */
+.usatoday .ut-score .stars {
+  display: inline-block;
+  vertical-align: middle;
+  width: 129px;
+  height: 30px;
+  background: url("img/star-rating.png");
+}
+/* line 26, ../sass/movies.sass */
+.usatoday .ut-score .stars.num-25 {
+  width: 65px;
+}
+/* line 28, ../sass/movies.sass */
+.usatoday .ut-score .stars.num-0 {
+  width: 0px;
+}
+/* line 30, ../sass/movies.sass */
+.usatoday .ut-score .stars.num-05 {
+  width: 14px;
+}
+/* line 32, ../sass/movies.sass */
+.usatoday .ut-score .stars.num-1 {
+  width: 28px;
+}
+/* line 34, ../sass/movies.sass */
+.usatoday .ut-score .stars.num-2 {
+  width: 53px;
+}
+/* line 36, ../sass/movies.sass */
+.usatoday .ut-score .stars.num-3 {
+  width: 78px;
+}
+/* line 38, ../sass/movies.sass */
+.usatoday .ut-score .stars.num-4 {
+  width: 105px;
+}
+
+/* line 40, ../sass/movies.sass */
+.rottentomatoes {
+  position: relative;
+  display: block;
+}
+/* line 43, ../sass/movies.sass */
+.rottentomatoes .poster_url {
+  width: 300px;
+  margin-top: 10px;
+}
+/* line 46, ../sass/movies.sass */
+.rottentomatoes .rt {
+  display: block;
+  position: relative;
+}
+/* line 49, ../sass/movies.sass */
+.rottentomatoes hr {
+  margin-top: -5px;
+  border: 2px solid green;
+}
+/* line 52, ../sass/movies.sass */
+.rottentomatoes .critics-header {
+  font-size: 24px;
+  font-family: "Lato";
+}
+/* line 55, ../sass/movies.sass */
+.rottentomatoes .critics_consensus {
+  display: block;
+  background-color: #cccccc;
+  border: 1px solid #999999;
+  padding: 10px;
+  padding-left: 40px;
+  color: black;
+  font-size: 16px;
+  line-height: 20px;
+}
+/* line 64, ../sass/movies.sass */
+.rottentomatoes .ratings {
+  text-align: center;
+  width: 400px;
+  margin: 20px auto;
+}
+/* line 68, ../sass/movies.sass */
+.rottentomatoes .ratings .left {
+  border: 1px solid black;
+  width: 140px;
+  height: 100px;
+  float: left;
+}
+/* line 73, ../sass/movies.sass */
+.rottentomatoes .ratings .left.good {
+  background: url("img/redtomato.png") no-repeat;
+  background-position: center bottom;
+  color: green;
+}
+/* line 77, ../sass/movies.sass */
+.rottentomatoes .ratings .left.bad {
+  background: url("img/greentomato.jpg") no-repeat;
+  background-position: center bottom;
+  color: red;
+}
+/* line 81, ../sass/movies.sass */
+.rottentomatoes .ratings .left .ratings_critics {
+  font-weight: bold;
+}
+/* line 83, ../sass/movies.sass */
+.rottentomatoes .ratings .right {
+  width: 140px;
+  height: 100px;
+  border: 1px solid black;
+  float: left;
+}
+/* line 88, ../sass/movies.sass */
+.rottentomatoes .ratings .right.good {
+  background: url("img/redtomato.png") no-repeat;
+  background-position: center bottom;
+  color: green;
+}
+/* line 92, ../sass/movies.sass */
+.rottentomatoes .ratings .right.bad {
+  background: url("img/greentomato.jpg") no-repeat;
+  background-position: center bottom;
+  color: red;
+}
+/* line 96, ../sass/movies.sass */
+.rottentomatoes .ratings .right .ratings_audience {
+  font-weight: bold;
+}
+/* line 98, ../sass/movies.sass */
+.rottentomatoes .ratings .right .ratings_audience.good {
+  color: green;
+}
+/* line 100, ../sass/movies.sass */
+.rottentomatoes .ratings .right .ratings_audience.bad {
+  color: red;
+}
+/* line 102, ../sass/movies.sass */
+.rottentomatoes .ratings .ratings_critics_score, .rottentomatoes .ratings .ratings_audience_score {
+  font-weight: bold;
+  font-size: 32px;
+}

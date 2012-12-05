@@ -1,0 +1,106 @@
+.usatoday
+    display: block
+    position: relative
+    .ut-title
+        font-size: 40px
+        font-family: "Lato"
+        text-transform: uppercase
+        font-weight: bold
+        display: block
+        border-bottom: 5px solid black
+        margin-bottom: 5px
+    .ut-mpaa
+        margin-bottom: 5px
+    .ut-score
+        .break-line
+            display: inline-block
+            vertical-align: middle
+            font-weight: bold
+            font-size: 20px
+        .stars
+            display: inline-block
+            vertical-align: middle
+            width: 129px
+            height: 30px
+            background: url("img/star-rating.png")
+            &.num-25
+                width: 65px
+            &.num-0
+                width: 0px
+            &.num-05
+                width: 14px
+            &.num-1
+                width: 28px
+            &.num-2
+                width: 53px
+            &.num-3
+                width: 78px
+            &.num-4
+                width: 105px
+.rottentomatoes
+    position: relative
+    display: block
+    .poster_url
+        width: 300px
+        margin-top: 10px
+    .rt
+        display: block
+        position: relative
+    hr
+        margin-top: -5px
+        border: 2px solid green
+    .critics-header
+        font-size: 24px
+        font-family: "Lato"
+    .critics_consensus
+        display: block
+        background-color: #CCC
+        border: 1px solid #999
+        padding: 10px
+        padding-left: 40px
+        color: #000
+        font-size: 16px
+        line-height: 20px
+    .ratings
+        text-align: center
+        width: 400px
+        margin: 20px auto
+        .left
+            border: 1px solid black
+            width: 140px
+            height: 100px
+            float: left
+            &.good
+                background: url("img/redtomato.png") no-repeat
+                background-position: center bottom
+                color: green
+            &.bad
+                background: url("img/greentomato.jpg") no-repeat
+                background-position: center bottom
+                color: red
+            .ratings_critics
+                font-weight: bold
+        .right
+            width: 140px
+            height: 100px
+            border: 1px solid black
+            float: left
+            &.good
+                background: url("img/redtomato.png") no-repeat
+                background-position: center bottom
+                color: green
+            &.bad
+                background: url("img/greentomato.jpg") no-repeat
+                background-position: center bottom
+                color: red
+            .ratings_audience
+                font-weight: bold
+                &.good
+                    color: green
+                &.bad
+                    color: red
+        .ratings_critics_score, .ratings_audience_score
+            font-weight: bold
+            font-size: 32px
+
+            
